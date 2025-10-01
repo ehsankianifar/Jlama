@@ -35,7 +35,7 @@ import org.openjdk.jmh.infra.Blackhole;
     "-XX:CompilerDirectivesFile=inlinerules.json", "--enable-native-access=ALL-UNNAMED", "-XX:+AlignVector" })
 public class TensorBench {
     // private static final NativeSimdTensorOperations nops = new NativeSimdTensorOperations();
-    private static final NativeGPUTensorOperations gops = new NativeGPUTensorOperations();
+    // private static final NativeGPUTensorOperations gops = new NativeGPUTensorOperations();
     private static final PanamaTensorOperations ops = new PanamaTensorOperations(MachineSpec.VECTOR_TYPE);
 
     private static final int SIZE = 2048;
@@ -63,7 +63,7 @@ public class TensorBench {
                     arr[i] = ThreadLocalRandom.current().nextFloat();
                 }
 
-                gops.registerModelTensor(f2);
+                // gops.registerModelTensor(f2);
 
                 this.bf = new BFloat16BufferTensor(f);
                 this.q81 = new Q8ByteBufferTensor(f);
@@ -133,7 +133,7 @@ public class TensorBench {
         bh.consume(ops.dotProduct(p.f, p.f2, 0, 0, SIZE));
     }
 
-    @Benchmark
+    /* @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.Throughput)
     // @Threads(8)
@@ -141,7 +141,7 @@ public class TensorBench {
         bh.consume(gops.dotProduct(p.f, p.f2, 0, 0, SIZE));
     }
 
-    /* @Benchmark
+    @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.Throughput)
     @Threads(8)

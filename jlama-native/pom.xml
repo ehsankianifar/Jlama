@@ -141,7 +141,7 @@
             </goals>
             <configuration>
               <target>
-                <exec executable="./download_dawn.sh" failonerror="true" resolveexecutable="true">
+                <!-- exec executable="./download_dawn.sh" failonerror="true" resolveexecutable="true">
                     <arg value="${dawnTag}" />
                     <arg value="linux" />
                     <arg value="x86_64" />
@@ -159,7 +159,7 @@
                   <env key="LDFLAGS2" value="-L${dawnWorkDir}/lib -lwebgpu_dawn -shared" />
                   <env key="LIB_NAME" value="${nativeLibName}" />
                   <env KEY="LIB_EXT"  value="so" />
-                </exec>
+                </exec -->
               </target>
             </configuration>
           </execution>

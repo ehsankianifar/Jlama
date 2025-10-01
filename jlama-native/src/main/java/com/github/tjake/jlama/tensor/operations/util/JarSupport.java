@@ -67,6 +67,6 @@ public class JarSupport {
         }
 
         logger.warn("jlama-native shared library not found: {}{}", libname, ext);
-        return false;
+        return true;
     }
 }

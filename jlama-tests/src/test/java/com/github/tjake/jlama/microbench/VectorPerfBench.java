@@ -69,8 +69,8 @@ public class VectorPerfBench {
                 ThreadLocalRandom.current().nextBytes(b1);
                 ThreadLocalRandom.current().nextBytes(b2);
 
-                fb1.set(ThreadLocalRandom.current().nextFloat(), i);
-                fb2.set(ThreadLocalRandom.current().nextFloat(), i);
+                fb1.set(ThreadLocalRandom.current().nextFloat(), 0, i);
+                fb2.set(ThreadLocalRandom.current().nextFloat(), 0, i);
             }
 
             q4 = new Q4ByteBufferTensor(fb2);

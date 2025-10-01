@@ -50,7 +50,7 @@ public class MachineSpec {
 
             if (preferredBits == 256) tmp = Type.AVX_256;
 
-            if (preferredBits == 128 && RuntimeSupport.isArm()) tmp = Type.ARM_128;
+            if (preferredBits == 128) tmp = Type.ARM_128;
 
             if (tmp == Type.NONE) logger.warn("Unknown vector type: {}", preferredBits);
 

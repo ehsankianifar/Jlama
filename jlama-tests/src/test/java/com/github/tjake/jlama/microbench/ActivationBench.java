@@ -44,11 +44,11 @@ public class ActivationBench {
 
     static {
         for (int i = 0; i < size; i++) {
-            f1.set(ThreadLocalRandom.current().nextFloat(), i);
-            f2.set(ThreadLocalRandom.current().nextFloat(), i);
+            f1.set(ThreadLocalRandom.current().nextFloat(), 0, i);
+            f2.set(ThreadLocalRandom.current().nextFloat(), 0, i);
 
-            f161.set(ThreadLocalRandom.current().nextFloat(), i);
-            f162.set(ThreadLocalRandom.current().nextFloat(), i);
+            f161.set(ThreadLocalRandom.current().nextFloat(), 0, i);
+            f162.set(ThreadLocalRandom.current().nextFloat(), 0, i);
         }
 
         b1 = new Q8ByteBufferTensor(f1);
